@@ -130,6 +130,7 @@ The last snipped was a simple example to show how you should call our library an
 
 ***Principal models***:
 - **Auth**: model you fill with ***login*** or ***logout*** data. The name came from "*Authentication*".
+
 ```
 <?php
 // Calling an instance of Model
@@ -141,7 +142,9 @@ The last snipped was a simple example to show how you should call our library an
   $inspetor_auth->setTimestamp(time()); // time() returns unix timestamp
 ?>
 ```
+
 - **Account**: model you fill with your ***user*** data. Account has *address* and *billing_address* as two non required values and both are builded with *Address* Model.
+
 ```
 <?php
 // Calling an instance of Model
@@ -159,7 +162,9 @@ The last snipped was a simple example to show how you should call our library an
   $inspetor_account->setUpdateTimestamp(time());
 ?>
 ```
+
 - **Event**: model you fill with your ***event*** data (e.g. an party or forum info). The *address* is required here, so you **must** instantiate an *Address* Model to an Event.
+
 ```
 <?php
 // Calling an instance of Model
@@ -190,7 +195,9 @@ $inspetor_event = $inspetor->getInspetorEvent();
   $inspetor_event->setSeatingOptions(["Pista", "VIP"]);
 ?>
 ```
+
 - **PassRecovery**: model that must contain data from a ***password recovery*** or ***password reset*** request of your API.
+
 ```
 <?php
 // Calling an instance of Model
@@ -201,12 +208,14 @@ $inspetor_event = $inspetor->getInspetorEvent();
   $inspetor_pass->setTimestamp(time());
 ?>
 ```
+
 - **Sale**: model that should be filled with the ***sale*** data you have in your API. The sale status has fixed allowed values:
   - "accepted" but you can use the Transfer const like Sale::ACCEPTED_STATUS
   - "rejected" but you can use the Transfer const like Sale::DECLINED_STATUS
   - "pending" but you can use the Transfer const like Sale::PENDING_STATUS
   - "refunded" but you can use the Transfer const like Sale::REFUNDED_STATUS
   - "manual_analysis" but you can use the Transfer const like Sale::MANUAL_ANALYSIS_STATUS
+
 ```
 <?php
 // Calling an instance of Model
@@ -223,10 +232,12 @@ $inspetor_event = $inspetor->getInspetorEvent();
   $inspetor_sale->setPayment($inspetor_payment);
 ?>
 ```
+
 - **Transfer**: model you fill with ***transference*** data of an item of your API (e.g. transfer of a ticket). The transfer status has fixed allowed values:
   - "accepted" but you can use the Transfer const like Transfer::ACCEPTED_STATUS
   - "rejected" but you can use the Transfer const like Transfer::REJECTED_STATUS
   - "pending" but you can use the Transfer const like Transfer::PENDING_STATUS
+  
 ```
 <?php
 // Calling an instance of Model
@@ -243,10 +254,9 @@ $inspetor_event = $inspetor->getInspetorEvent();
 ?>
 ```
 
-
-
 ***Auxiliar models***:
 - **Address**: this model appears inside Account and Event models and should be filled with data of an ***user*** or an ***event***.
+
 ```
 <?php
 // Calling an instance of Model
@@ -263,6 +273,7 @@ $inspetor_event = $inspetor->getInspetorEvent();
   $inspetor_address->setLongitude("123");
 ?>
 ```
+
 - **CreditCard**: when your API process a payment done with credit card, this model will be used. It should be filled with ***buyer's creditcard*** secure data. We don't hold all information at all.
 
 ```
