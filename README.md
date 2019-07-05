@@ -373,7 +373,8 @@ class InspetorClass
     - *Phalcon*: that's an open source full stack framework for PHP, optimized for high performance. Among all the advantages and features, Phalcon provide us an nice *dependency injection* service. More about Phalcon [here](https://docs.phalconphp.com/3.4/en/introduction). 
     
     Let's see an example: 
-```
+    
+```php
 <?php
 
 namespace NiceCompany\Inspetor;
