@@ -129,7 +129,8 @@ The last snipped was a simple example to show how you should call our library an
 
 
 ***Principal models***:
-- **Auth**: model you fill with ***login*** or ***logout*** data. The name came from "*Authentication*".
+- **Auth**: model you fill with ***login*** or ***logout*** data. The name came from *Authentication*.
+
 
 ```
 <?php
