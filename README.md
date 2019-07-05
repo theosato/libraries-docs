@@ -1,6 +1,6 @@
  
 <p>
-  <img src="Images/inspetor.png" width="200" height="40" alt="Inspetor Logo"> </img> 
+  <img src="Images/Inspetor.png" width="200" height="40" alt="Inspetor Logo"> </img> 
 </p>
 
 # Inspetor Antifraud
