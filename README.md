@@ -264,6 +264,7 @@ $inspetor_event = $inspetor->getInspetorEvent();
 ?>
 ```
 - **CreditCard**: when your API process a payment done with credit card, this model will be used. It should be filled with ***buyer's creditcard*** secure data. We don't hold all information at all.
+
 ```
 <?php
 // Calling an instance of Model
@@ -276,7 +277,9 @@ $inspetor_event = $inspetor->getInspetorEvent();
   $inspetor_cc->setHolderCpf("07206094880");
 ?>
 ```
+
 - **Item**: when someone buy a ***ticket*** for instance, this Model will be instantiate and filled with that ticket data.
+
 ```
 <?php
 // Calling an instance of Model
@@ -291,10 +294,12 @@ $inspetor_event = $inspetor->getInspetorEvent();
   $inspetor_item->setQuantity("2");
 ?>
 ```
+
 - **Payment**: this is a Model that holds the ***transaction*** data (e.g. payment method or installments). The payment status has fixed allowed values:
   - "credit_card" but you can use the Payment const like Payment::CREDIT_CARD
   - "boleto" but you can use the Payment const like Payment::BOLETO
   - "other" but you can use the Payment const like Payment::OTHER_METHOD
+  
 ```
 <?php
 // Calling an instance of Model
@@ -324,6 +329,8 @@ Not all of the Model's attributes are required but we trully recommend you work 
 ### Best Practices & Tips
 Did you think it was easy? Please tell us and feel free to send suggestions [here](), we really would appreciate that. From now on, we decided to tell you some ~~secrets~~ nice practices we discover during development time and should help you with a cleaner integration. 
   - **InspetorClass**: we already told you about that but it's important. Do it! With this class, you don't need to pass our config everytime and creates a layer between our application and yours, where you can, for instance, create funcions as *modelsBuilders* (we've already talked about that too) to keep all builders in one place. Here's a snippet of InspetorClass like that old before but with an example of *builder*.
+  
+  
 ```
 <?php
 
@@ -367,6 +374,8 @@ class InspetorClass
 }
 ?>
 ```
+
+
   - **InspetorServices**: that's another class to help you with Inspetor instantion and is a totally optional feature. But you'll like it. Do you know something about **dependency injection**? What about **Phalcon**? Dude, these are awesome tools to development with PHP, let's talk about it. 
     - *Dependency Injection*: not only in PHP but in *software engineering* at all, that's a technique whereby one object supplies the dependencies of another object. A "dependency" is an object that can be used, for example a service (that's how we do!). And, if I had to explain to 5-years-old, I would quote John Munsch and please, read more about this awesome topic [here](https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/0).: 
     > When you go and get things out of the refrigerator for yourself, you can cause problems. You might leave the door open, you might get something Mommy or Daddy doesn't want you to have. You might even be looking for something we don't even have or which has expired. What you should be doing is stating a need, "I need something to drink with lunch," and then we will make sure you have something when you sit down to eat.
@@ -375,7 +384,7 @@ class InspetorClass
     Let's see an example: 
     
     
-```php
+```
 <?php
 
 namespace NiceCompany\Inspetor;
