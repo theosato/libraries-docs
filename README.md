@@ -374,6 +374,7 @@ class InspetorClass
     
     Let's see an example: 
     
+    
 ```php
 <?php
 
@@ -415,8 +416,6 @@ class InspetorServices
         ]);
     }
 }
-
-
 ``` 
 
 ### Conclusion 
